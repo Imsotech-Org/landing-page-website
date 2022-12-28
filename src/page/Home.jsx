@@ -23,9 +23,8 @@ const BenefitsItem = ({ number = 0 }) => {
   let [openMore, setOpenMore] = useState(false);
 
   const toggleOpen = () => {
-    // 👇️ passed function to setState
-    setOpenMore(current => !current);
-    console.log('Hey')
+    setOpenMore(openMore => !openMore);
+    console.log(openMore);
   };
 
   const benefitItem = [
@@ -46,8 +45,8 @@ const BenefitsItem = ({ number = 0 }) => {
     {
       image: <img src={fitnessIcon} alt='bioTracking icon' style={{width: '4rem', height: '4rem', marginRight: "1rem" }} />,
       text: "Exercise is the cornerstone of health and looking great.  Physical activity, resistance training and optimum protein intake is critical for men between the ages of 45 and 65.",
-      long: false,
-      longText: ''
+      long: true,
+      longText: ' Strategies to bolster muscular strength and lean body muscle mass as you age are vital to your quality of life and longevity.'
     },
     {
       image: (
@@ -55,21 +54,21 @@ const BenefitsItem = ({ number = 0 }) => {
       ),
       text: "Everyone has their own bio-chemical individuality.  What is optimum nutrition differs from person to person.  How much protein, carbohydrates and fat you should eat, which supplements you need and which you don’t, and how many daily calories you should consume varies wildly.",
       long: true,
-      longText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, incidunt"
+      longText: "There is no such thing as an average person and/or a perfect diet. Your nutritional needs should be calibrated specifically to you. No matter how much exercise you do, your health and longevity results are maximized or limited by your diet."
     },
     {
       image: <img src={bioTrackingIcon} alt='bioTracking icon' style={{width: '4rem', height: '4rem', marginRight: "1rem" }} />,
       text: "Tracking your fitness and health development and implementing reliable indictors to gauge your progress is essential.  To live your healthiest and longest life possible, your physical activity levels, your diet, health history, and many other factors must be taken into account.",
       long: true,
-      longText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, incidunt"
+      longText: " Monitoring your biomarkers are necessary to advance your health and exercise goals forward."
     },
     {
       image: (
         <img src={healthIcon} alt='bioTracking icon' style={{width: '4rem', height: '4rem', marginRight: "1rem" }} />
       ),
       text: "Objective measures of health status shift in response to what you eat, how you move, how you respond to stress and the quality of your sleep.",
-      long: true,
-      longText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, incidunt"
+      long: false,
+      longText: ""
     },
   ];
 
@@ -78,14 +77,12 @@ const BenefitsItem = ({ number = 0 }) => {
       {benefitItem[number].image}
       <p style={{ width: "100%", marginTop: "1rem", fontFamily: "'CMU Serif', sans-serif" }}>
         {benefitItem[number].text}
-        {
-          openMore.more ? (
-            benefitItem[number].longText
-          ) : ('')
-        }
+        {openMore && benefitItem[number].longText}
         {
           benefitItem[number].long ? (
-            <button onClick={toggleOpen} style={{border: 'none', color: '#502c49', fontWeight: 'bold'}} >More About</button>
+            <button className="moreAboutBtn" onClick={toggleOpen} >
+              {openMore ? ('Less About') : ('More About')}
+            </button>
           ) : ('')
         }
       </p>
@@ -101,7 +98,6 @@ const Home = () => {
   });
 
   let [subscribers, setSubscribers] = useState("");
-  let [emailInfo, setEmailInfo] = useState("");
 
   let { name, email } = formData;
 
@@ -124,7 +120,7 @@ const Home = () => {
       body: JSON.stringify(formData),
     });
 
-    toast.success("Thank you for subscribing!", {
+    toast.success("Thank you for registering!", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -190,6 +186,7 @@ const Home = () => {
               <input
                 type="text"
                 placeholder="Name"
+                required
                 name="name"
                 id="name"
                 value={name}
@@ -198,6 +195,7 @@ const Home = () => {
               <input
                 type="email"
                 placeholder="Email"
+                required
                 name="email"
                 id="email"
                 value={email}
@@ -315,14 +313,45 @@ const Home = () => {
       <div className="subscribeSocials">
         <div className="subscribeContainer" style={{ width: "95%" }}>
           <div className="formContainer">
-            <form>
+            <form onSubmit={onSubmit}>
               <label>Register for Webinar</label>
-              <input type="text" placeholder="Name" name="name" id="name" />
-              <input type="email" placeholder="Email" name="email" id="email" />
+              <input
+                type="text"
+                placeholder="Name"
+                required
+                name="name"
+                id="name"
+                value={name}
+                onChange={onChange}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                name="email"
+                id="email"
+                value={email}
+                onChange={onChange}
+              />
+              <input
+                type="hidden"
+                name="subject"
+                id="subject"
+                defaultValue="AKLC Subscribers"
+              />
+              <input
+                type="hidden"
+                name="subscribers"
+                id="subscribers"
+                defaultValue={subscribers}
+              />
+
               <button>Register</button>
             </form>
           </div>
         </div>
+
+        
         <div className="socialsContainer">
           <small>Socials</small>
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">

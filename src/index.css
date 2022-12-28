@@ -142,6 +142,16 @@ form button:hover{
   list-style: none;
 }
 
+.moreAboutBtn{
+  border: none; 
+  color: #502c49; 
+  font-weight: bold;
+  cursor: pointer;
+}
+.moreAboutBtn:hover{
+  color: var(--secondary-color);
+}
+
 .footer{
   background-color: #363d10;
   color: #F3F1F3;
