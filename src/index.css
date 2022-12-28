@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/cmu-serif');
 
 :root {
   --primary-color: #363d10;
@@ -29,6 +30,7 @@ header{
 }
 header img {
   margin: 0.5rem 1rem;
+  width: 15rem;
 }
 
 video{
@@ -75,20 +77,27 @@ form button {
 form button:hover{
   transform: scale(103%);
   transition: 1s;
+  background-color: #502c49;
 }
 
 .socialsContainer{
   margin-left: 4rem;
 }
+.socialsContainer a{
+  color: #F3F1F3;
+}
+.socialsContainer a:hover{
+  color: #502c49;
+}
 
 .bio{
   overflow: auto; 
-  color: #363d10; 
+  background-color: #363d10;
+  color: #F3F1F3; 
   padding: 3rem 2rem;
 }
 .bio img {
   width: 30rem;
-  border-radius: 50%;
   float: left;
   overflow: auto;
   margin-right: 4rem;
@@ -103,14 +112,14 @@ form button:hover{
 }
 .bioInfo p {
   text-align: left; 
-  font-size: 1.2rem;
+  font-family: 'CMU Serif', sans-serif;
   line-height: 1.3rem;
 }
 
 .benefits{
-  background-color: #363d10; 
-  color: #F3F1F3;
-  padding: 3rem 2rem;
+  background-color: #F3F1F3; 
+  color: #363d10;
+  padding: 3rem 0;
 }
 .benefits h2 {
   text-align: center;
@@ -120,16 +129,37 @@ form button:hover{
 
 .benefitsItems{
   display: flex;
-  margin: 0 8% 2rem 8%;
+  justify-content: space-between;
+  gap: 5rem;
+  margin: 0 5% 2rem 5%;
 }
 
 .leftUl ul {
   list-style: none;
-  margin-right: 5rem;
 }
 
 .rightUl ul {
   list-style: none;
+}
+
+.footer{
+  background-color: #363d10;
+  color: #F3F1F3;
+  overflow: auto;
+  padding: 2rem; 
+  position: relative;
+}
+
+.footer img {
+  float: left;
+  width: 12rem;
+}
+
+.footerMoreInfoRight p {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: 'CMU Serif', sans-serif;
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 1100px) {
@@ -147,15 +177,26 @@ form button:hover{
 @media screen and (max-width: 940px) {
   .bio img {
     float: none;
-    overflow:unset;
+    overflow:none;
     margin:1rem 50%;
     transform: translatex(-50%);
   }
   .bio{
-    overflow:unset;
+    overflow:none;
   }
   .bioInfo {
-    overflow:unset;
+    overflow:none;
+  }
+  .footer{
+    overflow: none;
+  }
+  
+  .footer img {
+    float: none;
+    display: block;
+  }
+  .footerMoreInfoRight p {
+    margin-top: 0rem;
   }
 }
 
@@ -166,5 +207,15 @@ form button:hover{
 
   .benefitsItems{
     display: block;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  video{
+    margin-top: 5rem;
+  }
+  .subscribeSocials{
+    padding-left: 0;
+    padding-right: 0;
   }
 }
