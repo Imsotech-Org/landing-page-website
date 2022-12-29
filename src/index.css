@@ -187,12 +187,11 @@ form button:hover{
 @media screen and (max-width: 940px) {
   .bio img {
     float: none;
-    overflow:none;
     margin:1rem 50%;
     transform: translatex(-50%);
   }
   .bio{
-    overflow:none;
+    overflow-x: hidden;
   }
   .bioInfo {
     overflow:none;

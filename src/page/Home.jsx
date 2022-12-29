@@ -24,7 +24,7 @@ const BenefitsItem = ({ number = 0 }) => {
 
   const toggleOpen = () => {
     setOpenMore(openMore => !openMore);
-    console.log(openMore);
+    // console.log(openMore);
   };
 
   const benefitItem = [
@@ -112,6 +112,23 @@ const Home = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7l3mgyo",
+        "template_zdrto1r",
+        e.target,
+        "zsbz2VeOWieYntBFq"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
     const response = await fetch("http://localhost:8885/subscribers", {
       method: "POST",
       headers: {
@@ -131,25 +148,20 @@ const Home = () => {
       theme: "colored",
     });
 
-    setFormData({
-      name: "",
-      email: "",
-    });
+    // console.log((await axios.get("http://localhost:8885/subscribers")).data);
 
-    console.log((await axios.get("http://localhost:5000/subscribers")).data);
+    // const res = await axios.get('http://localhost:8885/subscribers').data;
 
-    // const res = await axios.get('http://localhost:5000/subscribers').data;
-
-    axios.get("http://localhost:5000/subscribers").then(async (response) => {
-      console.log(response);
-      console.log(response.data.length);
+    axios.get("http://localhost:8885/subscribers").then(async (response) => {
+      // console.log(response);
+      // console.log(response.data.length);
       for (let index = 0; index < response.data.length; index++) {
         setSubscribers(
           (subscribers += `\nName: ${response.data[index].name} | Email: ${response.data[index].email}`)
         );
       }
-      await delay(10000);
       // console.log('after');
+      await delay(5000);
       emailjs
         .sendForm(
           "service_7l3mgyo",
@@ -165,6 +177,11 @@ const Home = () => {
             console.log(error.text);
           }
         );
+
+      setFormData({
+        name: "",
+        email: "",
+      });
     });
   };
 
@@ -222,7 +239,7 @@ const Home = () => {
         
         <div className="socialsContainer">
           <small>Socials</small>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/andrewkolaskolifecenter/" target="_blank" rel="noopener noreferrer">
             <FaInstagram
               style={{
                 display: "block",
@@ -233,7 +250,7 @@ const Home = () => {
               }}
             />
           </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/andrew-kolasko-30054429/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin
               style={{
                 display: "block",
@@ -243,12 +260,12 @@ const Home = () => {
               }}
             />
           </a>
-          <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.twitter.com/AKolasko/" target="_blank" rel="noopener noreferrer">
             <FaTwitterSquare
               style={{ width: "2.5rem", height: "2.5rem", marginBottom: "1rem" }}
             />
           </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=100088826560587/" target="_blank" rel="noopener noreferrer">
             <FaFacebookSquare
               style={{ width: "2.5rem", height: "2.5rem", marginBottom: "1rem" }}
             />
@@ -354,7 +371,7 @@ const Home = () => {
         
         <div className="socialsContainer">
           <small>Socials</small>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/andrewkolaskolifecenter/" target="_blank" rel="noopener noreferrer">
             <FaInstagram
               style={{
                 display: "block",
@@ -365,7 +382,7 @@ const Home = () => {
               }}
             />
           </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/andrew-kolasko-30054429/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin
               style={{
                 display: "block",
@@ -375,12 +392,12 @@ const Home = () => {
               }}
             />
           </a>
-          <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.twitter.com/AKolasko/" target="_blank" rel="noopener noreferrer">
             <FaTwitterSquare
               style={{ width: "2.5rem", height: "2.5rem", marginBottom: "1rem" }}
             />
           </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=100088826560587/" target="_blank" rel="noopener noreferrer">
             <FaFacebookSquare
               style={{ width: "2.5rem", height: "2.5rem", marginBottom: "1rem" }}
             />

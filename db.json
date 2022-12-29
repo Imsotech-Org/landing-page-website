@@ -1,5 +1,14 @@
 {
   "subscribers": [
-    
+    {
+      "name": "Felipe",
+      "email": "felipe@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Pitra",
+      "email": "pitra@gmail.com",
+      "id": 2
+    }
   ]
 }
