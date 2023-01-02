@@ -129,7 +129,7 @@ const Home = () => {
         }
       );
 
-    const response = await fetch("http://localhost:8885/subscribers", {
+    const response = await fetch("http://localhost:5000/subscribers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -152,7 +152,7 @@ const Home = () => {
 
     // const res = await axios.get('http://localhost:8885/subscribers').data;
 
-    axios.get("http://localhost:8885/subscribers").then(async (response) => {
+    axios.get("http://localhost:5000/subscribers").then(async (response) => {
       // console.log(response);
       // console.log(response.data.length);
       for (let index = 0; index < response.data.length; index++) {
