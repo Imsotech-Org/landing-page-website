@@ -154,7 +154,6 @@ const Home = () => {
 
     axios.get("http://localhost:5000/subscribers").then(async (response) => {
       // console.log(response);
-      // console.log(response.data.length);
       for (let index = 0; index < response.data.length; index++) {
         setSubscribers(
           (subscribers += `\nName: ${response.data[index].name} | Email: ${response.data[index].email}`)
