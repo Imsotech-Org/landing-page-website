@@ -1,5 +1,9 @@
 {
   "subscribers": [
-    
+    {
+      "name": "Felipe",
+      "email": "felipe@gmail.com",
+      "id": 1
+    }
   ]
 }
