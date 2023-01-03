@@ -129,7 +129,7 @@ const Home = () => {
         }
       );
 
-    const response = await fetch("http://localhost:5000/subscribers", {
+    const response = await fetch("https://landing-page-website.herokuapp.com:5000/subscribers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -148,11 +148,7 @@ const Home = () => {
       theme: "colored",
     });
 
-    // console.log((await axios.get("http://localhost:8885/subscribers")).data);
-
-    // const res = await axios.get('http://localhost:8885/subscribers').data;
-
-    axios.get("http://localhost:5000/subscribers").then(async (response) => {
+    axios.get("https://landing-page-website.herokuapp.com:5000/subscribers").then(async (response) => {
       // console.log(response);
       for (let index = 0; index < response.data.length; index++) {
         setSubscribers(
