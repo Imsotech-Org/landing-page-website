@@ -3,6 +3,7 @@ import video1 from "../assets/media/Andy-Bio-01.mp4";
 import img1 from "../assets/media/16.jpg";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
+import andrew1 from '../assets/media/andrew1.jpeg';
 import bioTrackingIcon from '../icons/bio-tracking-icon.png';
 import fitnessIcon from '../icons/fitness-icon.png';
 import healthIcon from '../icons/health-icon.png';
@@ -12,6 +13,7 @@ import nutritionIcon from '../icons/nutrition-icon.png';
 import logoSmlSecond from '../icons/logo-sml-second.png';
 import logoBigFirst from '../icons/logo-big-first.png';
 import {
+  FaArrowDown,
   FaFacebookSquare,
   FaInstagram,
   FaLinkedin,
@@ -137,7 +139,7 @@ const Home = () => {
       body: JSON.stringify(formData),
     });
 
-    toast.success("Thank you for registering!", {
+    toast.success(`Thank you ${name}, You are now enrolled in the webinar 5 Fundamentals of Longevity Live Webinar, on January 21, 2023`, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -190,11 +192,19 @@ const Home = () => {
         <source src={video1} type="video/mp4" />
       </video>
 
+      <div className="marketingContainer">
+        <img src={andrew1} style={{width: '14rem', float: 'right', overflow: 'auto', borderRadius: '15px'}} alt="" />
+        <h3 style={{fontSize: '3rem', padding: '0.5rem', marginTop: '4rem'}}>First Time Offer!</h3>
+        <h4 style={{fontSize: '2rem', padding: '0.5rem', color: '#502c49'}}>5 Fundamentals of Longevity Free Live Webinar.</h4>
+        <h5 style={{fontSize: '1rem', padding: '0.5rem', color: '#879635'}}>January 21, 2023</h5>
+        <h3 style={{fontSize: '2rem', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Enroll now! <FaArrowDown style={{marginLeft: '0.5rem',color: '#502c49', width: '4rem', height: '4rem'}}/></h3>
+      </div>
+
       <div className="subscribeSocials">
         <div className="subscribeContainer" style={{ width: "95%" }}>
           <div className="formContainer">
             <form onSubmit={onSubmit}>
-              <label>Register for Webinar</label>
+              <label>Enroll in Webinar</label>
               <input
                 type="text"
                 placeholder="Name"
@@ -226,7 +236,7 @@ const Home = () => {
                 defaultValue={subscribers}
               />
 
-              <button>Register</button>
+              <button>Enroll</button>
             </form>
           </div>
         </div>
@@ -271,7 +281,7 @@ const Home = () => {
       <div className="bio">
         <img src={img1} style={{borderRadius: '50%'}} alt="" />
         <div className="bioInfo">
-          <h2>Andrew's Bio</h2>
+          <h2>About Andrew</h2>
           <p>
           Andrew Kolasko is the CEO and founder of Andrew Kolasko Life Center. He is a visionary health leader and former champion natural bodybuilder with more than 40 years of weight training, athletic performance and sound eating and nutritional practices. Andrew has achieved the rare air balance of combining the right amount of real world fitness education with longevity based emerging sciences to implement healthy processes and the proven methodologies to attain the look, performance and body mechanics and metabolic health of men several years younger than his chronological age of 55.
           </p>
@@ -326,7 +336,7 @@ const Home = () => {
         <div className="subscribeContainer" style={{ width: "95%" }}>
           <div className="formContainer">
             <form onSubmit={onSubmit}>
-              <label>Register for Webinar</label>
+              <label>Enroll in Webinar</label>
               <input
                 type="text"
                 placeholder="Name"
@@ -358,7 +368,7 @@ const Home = () => {
                 defaultValue={subscribers}
               />
 
-              <button>Register</button>
+              <button>Enroll</button>
             </form>
           </div>
         </div>

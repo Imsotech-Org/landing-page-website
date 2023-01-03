@@ -152,6 +152,13 @@ form button:hover{
   color: var(--secondary-color);
 }
 
+.marketingContainer{
+  text-align: center;
+  padding: 1rem 10rem; 
+  color: #363d10;
+  overflow: auto;
+}
+
 .footer{
   background-color: #363d10;
   color: #F3F1F3;
@@ -196,6 +203,9 @@ form button:hover{
   .bioInfo {
     overflow:none;
   }
+  .marketingContainer{
+    padding: 1rem 4rem;
+  }
   .footer{
     overflow: none;
   }
@@ -216,6 +226,15 @@ form button:hover{
 
   .benefitsItems{
     display: block;
+  }
+  .marketingContainer{
+    padding: 1rem 1rem;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .marketingContainer img{
+    display: none;
   }
 }
 
