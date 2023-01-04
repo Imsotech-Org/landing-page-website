@@ -179,6 +179,19 @@ form button:hover{
   font-size: 0.8rem;
 }
 
+.Toastify__toast--success{
+  margin-top: 10rem;
+  height: 50vh !important;
+  width: 40rem !important;
+  position: absolute;
+  left: -10rem;
+  background-color: var(--secondary-color) !important;
+  box-shadow: 1px 1px 1px black;
+}
+.Toastify__toast-body {
+  font-size: 1.2rem;
+}
+
 @media screen and (max-width: 1100px) {
   .bio img {
     width: 20rem;
@@ -230,11 +243,23 @@ form button:hover{
   .marketingContainer{
     padding: 1rem 1rem;
   }
+  .Toastify__toast--success{
+    width: 30rem !important;
+    left: -5.5rem;
+  }
 }
 
-@media screen and (max-width: 650px){
-  .marketingContainer img{
-    display: none;
+@media screen and (max-width: 500px){
+  .Toastify__toast--success{
+    width: 24rem !important;
+    left: -2.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Toastify__toast--success{
+    margin-left: 5rem !important;
+    width: 20rem !important;
   }
 }
 

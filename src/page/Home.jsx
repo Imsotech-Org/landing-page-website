@@ -3,7 +3,7 @@ import video1 from "../assets/media/Andy-Bio-01.mp4";
 import img1 from "../assets/media/16.jpg";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
-import andrew1 from '../assets/media/andrew1.jpeg';
+import thumbnail from '../assets/media/thumbnail.jpeg';
 import bioTrackingIcon from '../icons/bio-tracking-icon.png';
 import fitnessIcon from '../icons/fitness-icon.png';
 import healthIcon from '../icons/health-icon.png';
@@ -182,6 +182,7 @@ const Home = () => {
     });
   };
 
+
   return (
     <div>
       <header>
@@ -193,8 +194,8 @@ const Home = () => {
       </video>
 
       <div className="marketingContainer">
-        <img src={andrew1} style={{width: '14rem', float: 'right', overflow: 'auto', borderRadius: '15px'}} alt="" />
-        <h3 style={{fontSize: '3rem', padding: '0.5rem', marginTop: '4rem'}}>First Time Offer!</h3>
+        <img src={thumbnail} style={{width: '22rem', borderRadius: '15px'}} alt="" />
+        <h3 style={{fontSize: '3rem', padding: '0.5rem', marginTop: '0.8rem'}}>First Time Offer!</h3>
         <h4 style={{fontSize: '2rem', padding: '0.5rem', color: '#502c49'}}>5 Fundamentals of Longevity Free Live Webinar.</h4>
         <h5 style={{fontSize: '1rem', padding: '0.5rem', color: '#879635'}}>January 21, 2023</h5>
         <h3 style={{fontSize: '2rem', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Enroll now! <FaArrowDown style={{marginLeft: '0.5rem',color: '#502c49', width: '4rem', height: '4rem'}}/></h3>
@@ -336,7 +337,7 @@ const Home = () => {
         <div className="subscribeContainer" style={{ width: "95%" }}>
           <div className="formContainer">
             <form onSubmit={onSubmit}>
-              <label>Enroll in Webinar</label>
+              <label>Enroll for the 5 fundamentals of Longevity live Webinar</label>
               <input
                 type="text"
                 placeholder="Name"
