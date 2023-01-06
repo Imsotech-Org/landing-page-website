@@ -417,7 +417,7 @@ const Home = () => {
           <p>
             This website is for informational purposes only. It does not constitute the practice of medicine, nursing or other professional health care services, including the giving of medical advice. No doctor/patient relationship is formed. The use of the information contained within this website and any video, text, graphics, images and/or other materials linked to this website is at the users own risk. The content of this website is not intended to be a substitute for professional medical advice, diagnosis and/or treatment. Consult with your doctor before taking any medications, vitamins, herbs and/or supplements of any kind. Users should not disregard or delay in obtaining medical advice for any medical condition they have and they should seek the assistance of their qualified health care professionals for any such conditions.
           </p>
-          <small style={{position: 'absolute', right: '3rem'}}>© 2022 Andrew Kolasko Life Center</small>
+          <small style={{position: 'absolute', right: '3rem'}}>© 2023 Andrew Kolasko Life Center</small>
         </div>
       </div>
     </div>
