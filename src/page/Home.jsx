@@ -139,7 +139,7 @@ const Home = () => {
       body: JSON.stringify(formData),
     });
 
-    toast.success(`Thank you ${name}, You are now enrolled in the webinar 5 Fundamentals of Longevity Live Webinar, on January 21, 2023`, {
+    toast.success(`Thank you ${name}, You are now enrolled in the webinar 5 Fundamentals of Longevity Live Webinar, on January 28, 2023`, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -197,7 +197,7 @@ const Home = () => {
         <img src={thumbnail} style={{width: '22rem', borderRadius: '15px'}} alt="" />
         <h3 style={{fontSize: '3rem', padding: '0.5rem', marginTop: '0.8rem'}}>First Time Offer!</h3>
         <h4 style={{fontSize: '2rem', padding: '0.5rem', color: '#502c49'}}>5 Fundamentals of Longevity Free Live Webinar.</h4>
-        <h5 style={{fontSize: '1rem', padding: '0.5rem', color: '#879635'}}>January 21, 2023</h5>
+        <h5 style={{fontSize: '1rem', padding: '0.5rem', color: '#879635'}}>January 28, 2023</h5>
         <h3 style={{fontSize: '2rem', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Enroll now! <FaArrowDown style={{marginLeft: '0.5rem',color: '#502c49', width: '4rem', height: '4rem'}}/></h3>
       </div>
 
